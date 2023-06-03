@@ -31,12 +31,13 @@ const Box = styled.div`
 `;
 
 const ProductInfoCell = styled.td`
-  padding: 15px 10px ;
+  padding: 1.2rem .4rem ;
   text-align:center;
-  font-size:.8rem;
-  font-weight:600;
-  color:#0e7348;
-  border-bottom:1px solid #000;
+  font-size:.85rem;
+  font-weight:500;
+  color:#0a3020;
+  border:1px solid;
+  
 
 `;
 
@@ -67,6 +68,17 @@ border-radius:20px 20px 0 0
 
 `
 
+const Table = styled.table`
+tbody tr:nth-child(odd) {
+  background-color:#ebfcf5 ;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5feff;
+}
+
+`
+
 export default function Account ( { prevOrders } ) {
   const { data: session } = useSession()
 
@@ -90,7 +102,7 @@ export default function Account ( { prevOrders } ) {
                         <div>Your cart is empty</div>
                      ) }
                      { prevOrders?.length > 0 && (
-                        <table>
+                        <Table>
                            <thead>
                               <tr>
                                  
@@ -109,6 +121,7 @@ export default function Account ( { prevOrders } ) {
                                     <ProductInfoCell>{ product.line_items.map( ( item ) => ( <Span key={ item }>{ item.quantity }</Span> ) ) }</ProductInfoCell>
                                     <ProductInfoCell>{ product.line_items.map( ( item ) => ( <Span key={ item }>{ item.price_data.unit_amount / 100 } $</Span> ) ) }</ProductInfoCell>
                                     <ProductInfoCell>{ ( new Date( product.createdAt ) ).toLocaleString() }</ProductInfoCell>
+                                    <br></br>
                                  </tr>
                               ) ) }
                               <tr>
@@ -116,7 +129,7 @@ export default function Account ( { prevOrders } ) {
                                  <td></td>
                               </tr>
                            </tbody>
-                        </table>
+                        </Table>
                      ) }
 
 
