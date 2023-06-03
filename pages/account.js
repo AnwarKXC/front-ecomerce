@@ -115,7 +115,7 @@ export default function Account ( { prevOrders } ) {
                            <tbody>
                               { prevOrders.map( product => (
                                  <tr key={ product._id }>
-                                    <ProductInfoCell >
+                                    <ProductInfoCell style={{"textAlign":"start"}} >
                                           { product.line_items.map( ( item ) => ( <Span key={ item }>{item.price_data?.product_data?.name }</Span> ) ) }
                                     </ProductInfoCell>
                                     <ProductInfoCell>{ product.line_items.map( ( item ) => ( <Span key={ item }>{ item.quantity }</Span> ) ) }</ProductInfoCell>
