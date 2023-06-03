@@ -9,7 +9,7 @@ import { Order } from "@/models/Order";
 import { mongooseConnect } from "@/lib/mongoose";
 import { primary } from "@/components/colors";
 import Head from "next/head";
-
+import Link from "next/link";
 
 
 
@@ -79,8 +79,18 @@ tbody tr:nth-child(even) {
 
 `
 
+
+
+
+
+
+
+
 export default function Account ( { prevOrders } ) {
-  const { data: session } = useSession()
+   const { data: session } = useSession();
+
+
+
 
    if ( session ) {
       return (
@@ -99,7 +109,7 @@ export default function Account ( { prevOrders } ) {
                   <Box>
                      <H1>last orders</H1>
                      { !prevOrders?.length && (
-                        <div>Your cart is empty</div>
+                        <div style={{"padding":"20px 50px" , "font-size":"20px" ,}}>No Orders yet <Link style={{padding:"10px",textDecoration:"none"}} href="/">order now</Link></div>
                      ) }
                      { prevOrders?.length > 0 && (
                         <Table>
@@ -131,8 +141,6 @@ export default function Account ( { prevOrders } ) {
                            </tbody>
                         </Table>
                      ) }
-
-
                   </Box>
                </Wrapper>
             </Center>
@@ -164,8 +172,11 @@ export default function Account ( { prevOrders } ) {
    )
 }
 
-export async function getServerSideProps () {
-   
+
+
+
+async function getServerSideProps () {
+
    await mongooseConnect();
    const prevOrders = await Order.find( {}, null, { sort: { '_id': -1 } } );
    return {
@@ -174,8 +185,4 @@ export async function getServerSideProps () {
       }
    };
 }
-
-
-
-
 

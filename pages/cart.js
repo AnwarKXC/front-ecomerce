@@ -89,7 +89,7 @@ color:#666;
 
 `
 
-export default function CartPage ( { newProducts , productsss }) {
+export default function CartPage ( { newProducts }) {
   const { cartProducts, addProduct, removeProduct, clearCart } = useContext( CartContext );
   const [ products, setProducts ] = useState( [] );
   const [ name, setName ] = useState( '' );
