@@ -175,7 +175,7 @@ export default function Account ( { prevOrders } ) {
 
 
 
-async function getServerSideProps () {
+export async function getServerSideProps () {
 
    await mongooseConnect();
    const prevOrders = await Order.find( {}, null, { sort: { '_id': -1 } } );
