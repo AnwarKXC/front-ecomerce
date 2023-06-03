@@ -56,13 +56,15 @@ const StyledNav = styled.nav`
   bottom: 0;
   left: 0;
   right: 0;
+  text-align:center;
   padding: 70px 20px 20px;
-  background-color: #1D1D1F;
+    background-color: #1D1D1F;
   @media screen and (min-width: 768px) {
     display: flex;
     position: static;
     align-items: center;
     padding: 0;
+
   }
 `;
 const NavLink = styled( Link )`
