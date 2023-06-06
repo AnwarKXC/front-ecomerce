@@ -1,6 +1,5 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { useSession, signIn, } from "next-auth/react"
 import Title from "@/components/Title";
 import Button from "@/components/Button";
 import styled from "styled-components";
@@ -49,7 +48,7 @@ const Span = styled.span`
 
 const TH = styled.th`
 padding: 15px 10px;
-color:${primary};
+color:${ primary };
 
 
 `
@@ -79,24 +78,16 @@ tbody tr:nth-child(even) {
 
 `
 
-
-
-
-
-
-
+import { useSession, signIn, } from "next-auth/react"
 
 export default function Account ( { prevOrders } ) {
    const { data: session } = useSession();
-
-
-
 
    if ( session ) {
       return (
          <>
             <Head>
-               <title>{session.user.name}</title>
+               <title>{ session.user.name }</title>
                <meta name="description" content="Created by Anwar kamal" />
                <meta name="theme-color" content="#317EFB" />
             </Head>
@@ -109,13 +100,13 @@ export default function Account ( { prevOrders } ) {
                   <Box>
                      <H1>last orders</H1>
                      { !prevOrders?.length && (
-                        <div style={{"padding":"20px 50px" , "font-size":"20px" ,}}>No Orders yet <Link style={{padding:"10px",textDecoration:"none"}} href="/">order now</Link></div>
+                        <div style={ { "padding": "20px 50px", "font-size": "20px", } }>No Orders yet <Link style={ { padding: "10px", textDecoration: "none" } } href="/">order now</Link></div>
                      ) }
                      { prevOrders?.length > 0 && (
                         <Table>
                            <thead>
                               <tr>
-                                 
+
                                  <TH>Product</TH>
                                  <TH>Quantity</TH>
                                  <TH>Price</TH>
@@ -125,8 +116,8 @@ export default function Account ( { prevOrders } ) {
                            <tbody>
                               { prevOrders.map( product => (
                                  <tr key={ product._id }>
-                                    <ProductInfoCell style={{"textAlign":"start"}} >
-                                          { product.line_items.map( ( item ) => ( <Span key={ item }>{item.price_data?.product_data?.name }</Span> ) ) }
+                                    <ProductInfoCell style={ { "textAlign": "start" } } >
+                                       { product.line_items.map( ( item ) => ( <Span key={ item }>{ item.price_data?.product_data?.name }</Span> ) ) }
                                     </ProductInfoCell>
                                     <ProductInfoCell>{ product.line_items.map( ( item ) => ( <Span key={ item }>{ item.quantity }</Span> ) ) }</ProductInfoCell>
                                     <ProductInfoCell>{ product.line_items.map( ( item ) => ( <Span key={ item }>{ item.price_data.unit_amount / 100 } $</Span> ) ) }</ProductInfoCell>
@@ -167,16 +158,11 @@ export default function Account ( { prevOrders } ) {
             </Wrapper>
          </Center>
          <Footer />
-
       </>
    )
 }
 
-
-
-
 export async function getServerSideProps () {
-
    await mongooseConnect();
    const prevOrders = await Order.find( {}, null, { sort: { '_id': -1 } } );
    return {

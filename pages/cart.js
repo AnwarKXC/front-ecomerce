@@ -89,7 +89,7 @@ color:#666;
 
 `
 
-export default function CartPage ( { newProducts }) {
+export default function CartPage ( { newProducts } ) {
   const { cartProducts, addProduct, removeProduct, clearCart } = useContext( CartContext );
   const [ products, setProducts ] = useState( [] );
   const [ name, setName ] = useState( '' );
@@ -154,7 +154,7 @@ export default function CartPage ( { newProducts }) {
               <p>We will email you when your order will be sent.</p>
             </Box>
           </ColumnsWrapper>
-          <NewProducts products={ newProducts }/>
+          <NewProducts products={ newProducts } />
         </Center>
         <Footer />
       </>
@@ -270,7 +270,7 @@ export default function CartPage ( { newProducts }) {
 }
 export async function getServerSideProps () {
   await mongooseConnect();
-  const newProducts = await Product.find( { }, null, { sort: { '_id': -1 }, limit: 5 } );
+  const newProducts = await Product.find( {}, null, { sort: { '_id': -1 }, limit: 5 } );
 
   return {
     props: {

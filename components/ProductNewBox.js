@@ -13,14 +13,16 @@ const WhiteBox = styled( Link )`
   position:relative;
   background-color: #fff;
   padding: 30px 5px 45px 5px ;
-   overflow:hidden;
+  overflow:hidden;
   height: 130px;
   text-align: center;
   display: flex;
+  flex-direction:column;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   box-shadow: 0 0 50px -10px rgb(0 0 0 / 0.30);
+  
   img{
     max-width: 100%;
     max-height: 120px;
@@ -28,15 +30,15 @@ const WhiteBox = styled( Link )`
   margin-bottom:1.rem
 `;
 
-const Title = styled( Link )`
-  font-weight: normal;
+const Title = styled.span`
   font-size:.75em;
   color:#555;
   font-weight:600;
   text-decoration:none;
-  margin:-35px 0 0;
   padding:0 5px;
   position:absolute;
+  bottom:10px;
+  text-align:center;
 `;
 
 const ProductInfoBox = styled.div`
@@ -83,13 +85,13 @@ export default function ProductNewBox ( { _id, name, price, images } ) {
    return (
       <ProductWrapper>
          <WhiteBox aria-label="Product" href={ url }>
-            <div>
-               <New>New </New>
-               <img src={ images?.[ 0 ] } alt="product" />
-            </div>
+            <New>New </New>
+            <img src={ images?.[ 0 ] } alt="product" />
+            <Title>
+               { name }
+            </Title>
          </WhiteBox>
          <ProductInfoBox>
-            <Title aria-label="Product" href={ url }>{ name }</Title>
             <PriceRow>
                <Price>
                   ${ price }

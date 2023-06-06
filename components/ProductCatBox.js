@@ -44,15 +44,15 @@ const Title = styled( Link )`
 
 
 export default function ProductCatBox ( { _id, name, images } ) {
-   const url = '/product/' + _id;
-   return (
-      <ProductWrapper>
-       <WhiteBox aria-label="Product" href={ url }>
-               <img src={ images?.[ 0 ] } alt="product" />
-         </WhiteBox>
-       <Title aria-label="Product" href={ url }>{ name }</Title>
-      </ProductWrapper>
-   );
+  const url = '/product/' + _id;
+  return (
+    <ProductWrapper>
+      <WhiteBox aria-label="Product" href={ url }>
+        <img src={ images?.[ 0 ] } alt="product" />
+      </WhiteBox>
+      <Title aria-label="Product" href={ url }>{ name }</Title>
+    </ProductWrapper>
+  );
 }
 
 

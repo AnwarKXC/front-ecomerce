@@ -17,6 +17,7 @@ const WhiteBox = styled( Link )`
   height: 130px;
   text-align: center;
   display: flex;
+  flex-direction:column;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
@@ -28,16 +29,15 @@ const WhiteBox = styled( Link )`
   margin-bottom:1.rem
 `;
 
-const Title = styled( Link )`
-  font-weight: normal;
+const Title = styled.span`
   font-size:.75em;
   color:#555;
-  text-decoration:none;
-  margin:-35px 0 0;
   font-weight:600;
-
-  padding:0 5px ;
+  text-decoration:none;
+  padding:0 5px;
   position:absolute;
+  bottom:10px;
+  text-align:center;
 `;
 
 const ProductInfoBox = styled.div`
@@ -73,12 +73,10 @@ export default function ProductBox ( { _id, name, price, images } ) {
   return (
     <ProductWrapper>
       <WhiteBox aria-label="Product" href={ url }>
-        <div>
           <img src={ images?.[ 0 ] } alt="product" />
-        </div>
+          <Title>{ name }</Title>
       </WhiteBox>
       <ProductInfoBox>
-        <Title aria-label="Product" href={ url }>{ name }</Title>
         <PriceRow>
           <Price>
             ${ price }

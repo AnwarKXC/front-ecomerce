@@ -21,11 +21,11 @@ const StyledProductsGrid = styled.div`
 `;
 
 export default function ProductsNewGrid ( { products } ) {
-   return (
-      <StyledProductsGrid>
-         { products?.length > 0 && products.map( product => (
-            <ProductNewBox key={ product._id } { ...product } />
-         ) ) }
-      </StyledProductsGrid>
-   );
+  return (
+    <StyledProductsGrid>
+      { products?.length > 0 && products.map( product => (
+        <ProductNewBox key={ product._id } { ...product } />
+      ) ) }
+    </StyledProductsGrid>
+  );
 }

@@ -3,7 +3,7 @@ import Center from "@/components/Center";
 import ProductsNewGrid from "./ProductNewGrid";
 import Link from "next/link";
 
-const Title = styled.h2`
+const Title = styled.span`
   font-size: 2rem;
   margin: 1.5rem 0 ;
   font-weight: 700;
@@ -19,18 +19,20 @@ const Title = styled.h2`
 `;
 
 const SeeMore = styled( Link )`
-font-size:.8rem;
+font-size:.9rem;
 color:#31719C;
 text-decoration:none;
 margin:0 10px;
 
 `
 
-export default function NewProducts({products}) {
+export default function NewProducts ( { products } ) {
   return (
     <Center>
-      <Title>New Arrivals <SeeMore aria-label="More Products" href={ '/products' }>see more</SeeMore></Title>
-      <ProductsNewGrid products={products} />
+      <h2>
+      <Title> New Arrivals</Title><SeeMore aria-label="More Products" href={ '/products' }>see more</SeeMore>
+      </h2>
+      <ProductsNewGrid products={ products } />
     </Center>
   );
 }
