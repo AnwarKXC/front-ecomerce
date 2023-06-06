@@ -195,12 +195,12 @@ export default function CartPage ( { newProducts } ) {
                       </ProductInfoCell>
                       <td>
                         <Button
-                          onClick={ () => lessOfThisProduct( product._id ) }>-</Button>
+                          onClick={ () => moreOfThisProduct( product._id ) }>+</Button>
                         <QuantityLabel>
                           { cartProducts.filter( id => id === product._id ).length }
                         </QuantityLabel>
                         <Button
-                          onClick={ () => moreOfThisProduct( product._id ) }>+</Button>
+                          onClick={ () => lessOfThisProduct( product._id ) }>-</Button>
                       </td>
                       <td style={ { "font-weight": "600", "color": "#3e3e40" } }>
                         ${ cartProducts.filter( id => id === product._id ).length * product.price }
