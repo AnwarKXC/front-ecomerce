@@ -60,6 +60,11 @@ const ColumnsWrapper = styled.div`
 const Column = styled.div`
   display: flex;
   align-items: center;
+  padding:0 10px;
+  @media screen and (min-width:768px){
+    padding:0px;
+
+  }
 `;
 const ButtonsWrapper = styled.div`
   display: flex;
