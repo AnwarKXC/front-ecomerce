@@ -5,6 +5,8 @@ import ButtonLink from "@/components/ButtonLink";
 import CartIcon from "@/components/icons/CartIcon";
 import {useContext} from "react";
 import {CartContext} from "@/components/CartContext";
+import Image from "next/image";
+
 
 const Bg = styled.div`
   background-color: #1D1D1F;
@@ -95,7 +97,7 @@ export default function Featured({product}) {
             </div>
           </Column>
           <Column>
-            <img src={`${product.images[0]}`} alt="product"/>
+            <Image rel="preload" loading="eager" style={ { objectFit: "contain" } } width={500} height={200} quality={50} src={`${product.images[0]}`} alt="product"/>
           </Column>
         </ColumnsWrapper>
       </Center>

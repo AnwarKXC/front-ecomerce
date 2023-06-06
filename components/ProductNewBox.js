@@ -91,7 +91,7 @@ export default function ProductNewBox ( { _id, name, price, images } ) {
       <ProductWrapper>
          <WhiteBox aria-label="Product" href={ url }>
             <New>New </New>
-            <Image width={ 140 } height={ 120 } src={ images?.[ 0 ] } alt="product" />
+            <Image loading="lazy" width={ 140 } height={ 120 } style={ { objectFit: "contain" } } quality={ 100 } src={ images?.[ 0 ] } alt="product" />
             <Title>
                { name }
             </Title>

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import {useState} from "react";
-
-const Image = styled.img`
+import Image from "next/image";
+const IMage = styled(Image)`
     max-width: 100%;
     max-height: 100%;
   `;
-const BigImage = styled.img`
+const BigImage = styled(Image)`
   max-width: 100%;
   max-height: 200px;
 `;
@@ -36,7 +36,7 @@ export default function ProductImages({images}) {
   return (
     <>
       <BigImageWrapper>
-        <BigImage src={activeImage} />
+        <BigImage width={ 500 } height={ 200 } quality={100} style={{objectFit:"contain"}} src={activeImage} />
       </BigImageWrapper>
       <ImageButtons>
         {images.map(image => (
@@ -44,7 +44,7 @@ export default function ProductImages({images}) {
             key={image}
             active={image===activeImage}
             onClick={() => setActiveImage(image)}>
-            <Image src={image} alt=""/>
+            <IMage width={80} height={ 60 } style={{objectFit:"contain"}} src={image} alt=""/>
           </ImageButton>
         ))}
       </ImageButtons>
