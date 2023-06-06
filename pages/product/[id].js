@@ -13,23 +13,28 @@ import { CartContext } from "@/components/CartContext";
 import NewProducts from "@/components/NewProducts";
 import ProductsGrid from "@/components/ProductsGrid";
 import Footer from "@/components/Footer";
-import Head
+import Head from "next/head";
 
-  from "next/head";
 const ColWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   @media screen and (min-width: 768px) {
-    grid-template-columns: .8fr 1.2fr;
+    grid-template-columns: 1fr .8fr;
   }
   gap: 40px;
   margin: 40px 0;
 `;
 const PriceRow = styled.div`
-  display: flex;
+  display: inline-flex;
   gap: 20px;
   align-items: center;
+    background: #d6d6d6;
+  padding: 0 0 0 10px;
+  border-radius: 10px;
+justify-content: space-between;
 `;
+
+
 const Price = styled.span`
   font-size: 1.4rem;
 `;

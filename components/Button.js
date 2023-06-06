@@ -3,8 +3,8 @@ import {primary} from "@/components/colors";
 
 export const ButtonStyle = css`
   border:0;
-  padding: .5rem 1rem;
-  border-radius: 7px;
+  padding: .5rem .7rem;
+  border-radius: 10px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;

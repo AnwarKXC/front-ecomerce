@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useContext } from "react";
 import { CartContext } from "@/components/CartContext";
 import CartIcon from "./icons/CartIcon";
-
+import Image from "next/image";
 const ProductWrapper = styled.div`
   
 `;
@@ -12,7 +12,6 @@ const ProductWrapper = styled.div`
 const WhiteBox = styled( Link )`
   position:relative;
   background-color: #fff;
-  
   padding:20px 5px 45px  5px;
   height: 130px;
   text-align: center;
@@ -21,11 +20,11 @@ const WhiteBox = styled( Link )`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  box-shadow: 0 0 50px -10px rgb(0 0 0 / 0.30);
-  img{
-    max-width: 100%;
-    max-height: 120px;
-  };
+  box-shadow: 0 0 25px -10px rgb(0 0 0 / 0.30);
+  // img{
+  //   max-width: 100%;
+  //   max-height: 120px;
+  // };
   margin-bottom:1.rem
 `;
 
@@ -49,6 +48,9 @@ const PriceRow = styled.div`
   @media screen and (min-width: 768px) {
     display: flex;
     gap: 5px;
+    background:#d6d6d6;
+    padding:0 0 0 5px ;
+    border-radius: 10px;
   }
   align-items: center;
   justify-content:space-between;
@@ -59,11 +61,13 @@ const Price = styled.div`
   font-size: .8rem;
   font-weight:600;
   text-align: center;
-  margin-bottom:5px;
+  margin-bottom:10px;
+  color:#38384a;
+
   @media screen and (min-width: 768px) {
     font-size: 1rem;
-    font-weight:600;
-    text-align: left;
+    margin-bottom:0px;
+
   }
 `;
 
@@ -73,7 +77,7 @@ export default function ProductBox ( { _id, name, price, images } ) {
   return (
     <ProductWrapper>
       <WhiteBox aria-label="Product" href={ url }>
-          <img src={ images?.[ 0 ] } alt="product" />
+          <Image width={140} height={120} src={ images?.[ 0 ] } alt="product" />
           <Title>{ name }</Title>
       </WhiteBox>
       <ProductInfoBox>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
-
+import Image from "next/image";
 const ProductWrapper = styled.div`
   
 `;
@@ -17,10 +17,6 @@ const WhiteBox = styled( Link )`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  img{
-    max-width: 100%;
-    max-height: 120px;
-  };
   margin:2rem 0 1rem ;
 `;
 
@@ -48,7 +44,7 @@ export default function ProductCatBox ( { _id, name, images } ) {
   return (
     <ProductWrapper>
       <WhiteBox aria-label="Product" href={ url }>
-        <img src={ images?.[ 0 ] } alt="product" />
+        <Image width={ 140 } height={ 120 } src={ images?.[ 0 ] } alt="product" />
       </WhiteBox>
       <Title aria-label="Product" href={ url }>{ name }</Title>
     </ProductWrapper>
