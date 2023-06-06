@@ -7,13 +7,11 @@ const BG = styled.div`
    background-color: #1D1D1F;
    color:#fff;
    position: static;
-   
-
 `;
 const StyledFooter = styled.footer`
    display:flex;
    justify-content:space-between;
-   gap:15px;
+   gap:1rem;
 `
 
 
@@ -21,14 +19,15 @@ const StyledUl = styled.div`
    list-style:none;
    display:flex;
    flex-direction:column;
-   gap:10px;
+   gap:.7rem;
+   
 
 
 `;
 const StyledLink = styled( Link )`
    color:#aaa;
    text-decoration:none;
-   font-size:12px;
+   font-size:9px;
    display:flex;
    gap:5px;
    :hover{
@@ -39,6 +38,10 @@ const StyledLink = styled( Link )`
       width:20px;
       height:20px;
    }
+      @media screen and (min-width: 768px) {
+            font-size:11px;
+      }
+
 `;
 const Styleddiv = styled.div`
    display:flex;
@@ -54,17 +57,17 @@ export default function Footer () {
          <Center>
             <StyledFooter>
                <StyledUl >
-                  <div style={ { "margin-bottom": "10px", "font-size": "12px" } }> COMPANY INFO </div>
+                  <div style={ { "margin-bottom": "10px", "font-size": "10px" } }> COMPANY INFO </div>
                   <div ><StyledLink href={ '' }> About</StyledLink></div>
                   <div ><StyledLink href={ '/shipping-info' }> Shipping & Return</StyledLink></div>
                </StyledUl>
                <StyledUl>
-                  <div style={ { "margin-bottom": "10px", "font-size": "12px" } } >FIND US ON</div>
+                  <div style={ { "margin-bottom": "10px", "font-size": "10px" } } >FIND US ON</div>
                   <div><StyledLink aria-label="Product" href={ 'https://www.facebook.com/groups/1906603669483476' } target="_blank"><svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="facebook-f"><path fill="#6563FF" d="M15.12,5.32H17V2.14A26.11,26.11,0,0,0,14.26,2C11.54,2,9.68,3.66,9.68,6.7V9.32H6.61v3.56H9.68V22h3.68V12.88h3.06l.46-3.56H13.36V7.05C13.36,6,13.64,5.32,15.12,5.32Z"></path></svg>Group</StyledLink></div>
                   <div><StyledLink aria-label="Product" href={ 'https://www.facebook.com/profile.php?id=100083273744429' } target="_blank"><svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="facebook"><path fill="#535AD8" d="M20.9,2H3.1A1.1,1.1,0,0,0,2,3.1V20.9A1.1,1.1,0,0,0,3.1,22h9.58V14.25h-2.6v-3h2.6V9a3.64,3.64,0,0,1,3.88-4,20.26,20.26,0,0,1,2.33.12v2.7H17.3c-1.26,0-1.5.6-1.5,1.47v1.93h3l-.39,3H15.8V22h5.1A1.1,1.1,0,0,0,22,20.9V3.1A1.1,1.1,0,0,0,20.9,2Z"></path></svg>Page</StyledLink></div>
                </StyledUl>
                <StyledUl style={ { "align-items": "center", } }>
-                  <div style={ {  "font-size": "13px" } }><span style={ { "color": "#999", "padding-right": "5px", "font-size": "12px" } }> by </span>Anwar kamal</div>
+                  <div style={ { "font-size": "12px" } }><span style={ { "color": "#999", "padding-right": "5px", "font-size": "10px" } }> by </span>Anwar kamal</div>
                   <div ><StyledLink aria-label="CV" href={ '/+201026265857.pdf' } target="_blank">View Resume</StyledLink></div>
                   <div>
                      <Styleddiv >
