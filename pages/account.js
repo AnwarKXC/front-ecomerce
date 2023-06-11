@@ -9,7 +9,7 @@ import { mongooseConnect } from "@/lib/mongoose";
 import { primary } from "@/components/colors";
 import Head from "next/head";
 import Link from "next/link";
-
+import { getSession } from "next-auth/react";
 
 
 const Wrapper = styled.div`
@@ -162,13 +162,24 @@ export default function Account ( { prevOrders } ) {
    )
 }
 
-export async function getServerSideProps () {
+export async function getServerSideProps ( context ) {
+   const session = await getSession( context );
+
    await mongooseConnect();
-   const prevOrders = await Order.find( {}, null, { sort: { '_id': -1 } } );
+   const prevOrders = await Order.find( {email:session?.user?.email}, null, { sort: { '_id': -1 } } );
    return {
       props: {
          prevOrders: JSON.parse( JSON.stringify( prevOrders ) ),
       }
    };
 }
+
+
+
+
+
+
+
+
+
 

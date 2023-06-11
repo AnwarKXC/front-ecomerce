@@ -97,7 +97,7 @@ export default function Featured({product}) {
             </div>
           </Column>
           <Column>
-            <Image rel="preload" loading="eager" style={ { objectFit: "contain" } } width={500} height={200} quality={50} src={`${product.images[0]}`} alt="product"/>
+            <Image rel="preload" loading="eager" priority={true}  style={ { objectFit: "contain" } } width={500} height={200} quality={50} src={`${product.images[0]}`} alt="product"/>
           </Column>
         </ColumnsWrapper>
       </Center>

@@ -76,7 +76,8 @@ export default function ProductBox ( { _id, name, price, images } ) {
   const url = '/product/' + _id;
   return (
     <ProductWrapper>
-      <WhiteBox aria-label="Product" href={ url }>
+      <WhiteBox aria-label="Product" href={ url } >
+
         <Image loading="lazy" width={140} height={120} style={{objectFit:"contain"}} quality={100} src={ images?.[ 0 ] } alt="product" />
           <Title>{ name }</Title>
       </WhiteBox>
