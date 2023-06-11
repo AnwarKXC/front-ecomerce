@@ -22,7 +22,7 @@ const WhiteBox = styled( Link )`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  box-shadow: 0 0 25px -10px rgb(0 0 0 / 0.30);
+  box-shadow: 0 0 25px -10px rgb(0 0 0 / 0.40);
   
   img{
     max-width: 100%;
@@ -61,13 +61,15 @@ const PriceRow = styled.div`
 `;
 const New = styled.span`
 position:absolute;
-top:5px;
-left:-20px;
+top:7px;
+left:-19px;
 color:white;
 background-color:red;
 border-radius:.4rem;
-padding:0 20px;
+padding:2px 20px;
 rotate:-45deg;
+  box-shadow: -5px 0px 45px -6px rgb(0 0 0 / 0.90);
+
 
 `
 
