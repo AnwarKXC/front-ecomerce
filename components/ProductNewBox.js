@@ -68,7 +68,6 @@ background-color:red;
 border-radius:.4rem;
 padding:2px 20px;
 rotate:-45deg;
-  box-shadow: -5px 0px 45px -6px rgb(0 0 0 / 0.90);
 
 
 `
