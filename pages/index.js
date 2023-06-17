@@ -29,7 +29,7 @@ export default function HomePage ( {  newProducts ,featuredProducts} ) {
 export async function getServerSideProps () {
   const featuredProductId = '648dd777ff822d16d857d75a';
   await mongooseConnect();
-  const featuredProduct = await Slide.findById( featuredProductId );
+  const featuredProducts = await Slide.findById( featuredProductId );
   const newProducts = await Product.find( {}, null, { sort: { '_id': -1 }, limit: 10 } );
   return {
     props: {
