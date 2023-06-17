@@ -6,8 +6,9 @@ import NewProducts from "@/components/NewProducts";
 import Footer from "@/components/Footer";
 import Head from "next/head";
 import Center from "@/components/Center";
+import { Slide } from "@/models/slide";
 
-export default function HomePage ( { featuredProduct, newProducts } ) {
+export default function HomePage ( {  newProducts ,featuredProducts} ) {
   return (
     <>
       <Head>
@@ -16,9 +17,9 @@ export default function HomePage ( { featuredProduct, newProducts } ) {
         <meta name="theme-color" content="#317EFB" />
       </Head>
       <Header />
-      <Featured product={ featuredProduct } />
+      <Featured product={ featuredProducts } />
       <Center>
-        <NewProducts products={ newProducts } />
+       <NewProducts products={ newProducts } />
       </Center>
       <Footer />
     </>
@@ -26,13 +27,13 @@ export default function HomePage ( { featuredProduct, newProducts } ) {
 }
 
 export async function getServerSideProps () {
-  const featuredProductId = '6474db0281466d666fa766c2';
+  const featuredProductId = '648dd777ff822d16d857d75a';
   await mongooseConnect();
-  const featuredProduct = await Product.findById( featuredProductId );
+  const featuredProduct = await Slide.findById( featuredProductId );
   const newProducts = await Product.find( {}, null, { sort: { '_id': -1 }, limit: 10 } );
   return {
     props: {
-      featuredProduct: JSON.parse( JSON.stringify( featuredProduct ) ),
+      featuredProduct: JSON.parse( JSON.stringify( featuredProducts ) ),
       newProducts: JSON.parse( JSON.stringify( newProducts ) ),
     },
   };
