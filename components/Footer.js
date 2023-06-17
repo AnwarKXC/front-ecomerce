@@ -76,7 +76,7 @@ export default function Footer () {
                <StyledUl style={ { "align-items": "center", } }>
                   <div style={ { "font-size": "12px" } }><span style={ { "color": "#999", "padding-right": "5px", "font-size": "10px" } }> by </span>Anwar kamal</div>
                   <div >
-                     <StyledLink aria-label="CV" href={ '/+201026265857.pdf' } target="_blank">View Resume</StyledLink>
+                     <StyledLink aria-label="CV" href={ '/anwar 01026265857_2.pdf' } target="_blank">View Resume</StyledLink>
                   </div>
                   <div>
                      <Styleddiv >
