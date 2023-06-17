@@ -64,12 +64,12 @@ export default function Footer () {
                <StyledUl>
                   <div style={ { "margin-bottom": "10px", "font-size": "12px" } } >FIND US ON</div>
                   <div>
-                     <StyledLink aria-label="Product" href={ 'https://www.facebook.com/groups/1906603669483476' } target="_blank">
+                     <StyledLink aria-label="Product" href={ '' } target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="facebook-f"><path fill="#6563FF" d="M15.12,5.32H17V2.14A26.11,26.11,0,0,0,14.26,2C11.54,2,9.68,3.66,9.68,6.7V9.32H6.61v3.56H9.68V22h3.68V12.88h3.06l.46-3.56H13.36V7.05C13.36,6,13.64,5.32,15.12,5.32Z"></path></svg>Group
                      </StyledLink>
                   </div>
                   <div>
-                     <StyledLink aria-label="Product" href={ 'https://www.facebook.com/profile.php?id=100083273744429' } target="_blank"><svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="facebook"><path fill="#535AD8" d="M20.9,2H3.1A1.1,1.1,0,0,0,2,3.1V20.9A1.1,1.1,0,0,0,3.1,22h9.58V14.25h-2.6v-3h2.6V9a3.64,3.64,0,0,1,3.88-4,20.26,20.26,0,0,1,2.33.12v2.7H17.3c-1.26,0-1.5.6-1.5,1.47v1.93h3l-.39,3H15.8V22h5.1A1.1,1.1,0,0,0,22,20.9V3.1A1.1,1.1,0,0,0,20.9,2Z"></path></svg>Page
+                     <StyledLink aria-label="Product" href={ '' } target="_blank"><svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="facebook"><path fill="#535AD8" d="M20.9,2H3.1A1.1,1.1,0,0,0,2,3.1V20.9A1.1,1.1,0,0,0,3.1,22h9.58V14.25h-2.6v-3h2.6V9a3.64,3.64,0,0,1,3.88-4,20.26,20.26,0,0,1,2.33.12v2.7H17.3c-1.26,0-1.5.6-1.5,1.47v1.93h3l-.39,3H15.8V22h5.1A1.1,1.1,0,0,0,22,20.9V3.1A1.1,1.1,0,0,0,20.9,2Z"></path></svg>Page
                      </StyledLink>
                   </div>
                </StyledUl>
@@ -80,7 +80,7 @@ export default function Footer () {
                   </div>
                   <div>
                      <Styleddiv >
-                        <StyledLink href={ 'https://www.linkedin.com/in/anwar-kamal-11a719252/' } aria-label="linkedin profile" target="_blank">
+                        <StyledLink href={ 'https://www.linkedin.com/in/anwar-kamal-mohamed/' } aria-label="linkedin profile" target="_blank">
                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="linkedin"><path fill="#242ED8" d="M20.47,2H3.53A1.45,1.45,0,0,0,2.06,3.43V20.57A1.45,1.45,0,0,0,3.53,22H20.47a1.45,1.45,0,0,0,1.47-1.43V3.43A1.45,1.45,0,0,0,20.47,2ZM8.09,18.74h-3v-9h3ZM6.59,8.48h0a1.56,1.56,0,1,1,0-3.12,1.57,1.57,0,1,1,0,3.12ZM18.91,18.74h-3V13.91c0-1.21-.43-2-1.52-2A1.65,1.65,0,0,0,12.85,13a2,2,0,0,0-.1.73v5h-3s0-8.18,0-9h3V11A3,3,0,0,1,15.46,9.5c2,0,3.45,1.29,3.45,4.06Z"></path></svg>
                         </StyledLink>
                         <StyledLink href={ 'https://github.com/AnwarKXC' } target="_blank" aria-label="GitHub profile" >
