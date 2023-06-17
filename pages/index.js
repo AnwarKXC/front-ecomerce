@@ -8,7 +8,7 @@ import Head from "next/head";
 import Center from "@/components/Center";
 import { Slide } from "@/models/slide";
 
-export default function HomePage ( {  newProducts ,featuredProducts} ) {
+export default function HomePage ( {  newProducts,featuredProduct } ) {
   return (
     <>
       <Head>
@@ -17,9 +17,9 @@ export default function HomePage ( {  newProducts ,featuredProducts} ) {
         <meta name="theme-color" content="#317EFB" />
       </Head>
       <Header />
-      <Featured product={ featuredProducts } />
+      <Featured product={ featuredProduct } />
       <Center>
-       <NewProducts products={ newProducts } />
+        <NewProducts products={ newProducts } />
       </Center>
       <Footer />
     </>
@@ -29,11 +29,11 @@ export default function HomePage ( {  newProducts ,featuredProducts} ) {
 export async function getServerSideProps () {
   const featuredProductId = '648dd777ff822d16d857d75a';
   await mongooseConnect();
-  const featuredProducts = await Slide.findById( featuredProductId );
+  const featuredProduct = await Slide.findById( featuredProductId );
   const newProducts = await Product.find( {}, null, { sort: { '_id': -1 }, limit: 10 } );
   return {
     props: {
-      featuredProduct: JSON.parse( JSON.stringify( featuredProducts ) ),
+      featuredProduct: JSON.parse( JSON.stringify( featuredProduct ) ),
       newProducts: JSON.parse( JSON.stringify( newProducts ) ),
     },
   };
