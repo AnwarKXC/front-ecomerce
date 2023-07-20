@@ -10,3 +10,5 @@ Built with the Next.js  & styled-components
 - category sorted items 
 - log in using Next.js Auth
 - review the last orders of the user with the details
+
+### by anwar kamal
